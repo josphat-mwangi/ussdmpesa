@@ -1,12 +1,7 @@
 const moment = require("moment");
 const PasswordBaseSixFour = require("../helpers/passwordbasesixfour");
-// const Payment             = require('../models/Payment');
 const request = require("request");
 const get_access_token = require("../utils/accessToken");
-
-const accessToken = (req, res) => {
-  res.status(200).json({ access_token: req.access_token });
-};
 
 const sendSTKPush = ({ phoneNumber, Amount }) => {
   return new Promise(async (resolve, reject) => {
@@ -85,4 +80,4 @@ const callBackURL = async (req, res) => {
   }
 };
 
-module.exports = { accessToken, sendSTKPush, callBackURL };
+module.exports = { sendSTKPush, callBackURL };
